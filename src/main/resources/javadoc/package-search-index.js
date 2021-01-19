@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"com.blog.telegraff"},{"l":"com.blog.telegraff.controller"},{"l":"com.blog.telegraff.data.model"},{"l":"com.blog.telegraff.data.repository"},{"l":"com.blog.telegraff.data.service"},{"l":"com.blog.telegraff.util"},{"l":"com.blog.telegraff.util.enums"}]

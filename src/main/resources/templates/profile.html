@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Профиль</title>
+    <link rel="icon" href="/images/website/telegraff.png" type="images/png">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <!-- Верхний колонтитул (Шапка) -->
+    <header th:insert="blokcs/header :: header"></header>
+    <div class="container mt-5 mb-5">
+        <h1 th:text="${user.surname} + ' ' + ${user.name}"></h1> <br>
+        <h3 th:text="${user.username}"></h3> <br> <br>
+        <img th:src="${imagePath}" height="300"> <br> <br>
+        <a class="btn btn-warning" href="/profile/edit"> Изменить </a> <br> <br>
+        <div class="container mt-5 mb-5">
+            <h4> Ваши посещения <span th:text="${size}"></span> </h4> <br>
+            <div th:each="el : ${attendances}" class="alert alert-info mt-2">
+                <p> <span th:text="${el.date}"></span></p>
+            </div>
+        </div>
+    </div>
+    <!-- Нижний колонтитул -->
+    <footer th:insert="blokcs/footer :: footer"></footer>
+</body>
+</html>

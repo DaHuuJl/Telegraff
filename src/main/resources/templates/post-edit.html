@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Редактирование публикации</title>
+    <link rel="icon" href="/images/website/telegraff.png" type="images/png">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <!-- Верхний колонтитул (Шапка) -->
+    <header th:insert="blokcs/header :: header"></header>
+
+    <div class="container mt-5 mb-5">
+        <h1>Редактирование публикации</h1> <br>
+        <div th:each="el : ${posts}">
+            <form method="post">
+                <input type="text" th:value="${el.title}" name="title" placeholder="Введите название публикации" class="form-control"> <br>
+                <textarea type="text"  name="fullText" placeholder="Введите текст публикации" class="form-control" th:text="${el.fullText}"/> <br>
+                <button type="submit" class="btn btn-success"> Обновить </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Нижний колонтитул -->
+    <footer th:insert="blokcs/footer :: footer"></footer>
+</body>
+</html>

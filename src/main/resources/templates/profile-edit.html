@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Редактирование профиля</title>
+    <link rel="icon" href="/images/website/telegraff.png" type="images/png">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+</head>
+<body>
+    <!-- Верхний колонтитул (Шапка) -->
+    <header th:insert="blokcs/header :: header"></header>
+
+    <div class="container mt-5 mb-5">
+        <form action="/profile/edit" method="post" enctype="multipart/form-data">
+            <h1>Редактирование профиля</h1>
+            <h5>Имя</h5>
+            <input type="text" th:value="${user.name}" name="name" placeholder="Имя" class="form-control"> <br>
+            <h5>Фамилия</h5>
+            <input type="text" th:value="${user.surname}" name="surname" placeholder="Фамилия" class="form-control"> <br>
+            <h5>Логин</h5>
+            <input type="text" th:value="${user.username}" name="username" placeholder="Логин" class="form-control"> <br>
+            <h5>Почта</h5>
+            <input type="email" th:value="${user.email}" name="email" placeholder="Почта" class="form-control"> <br>
+            <h5>Новый пароль</h5>
+            <input type="password" name="password" placeholder="Новый пароль" class="form-control"> <br>
+            <h5> Изменить фотографию профиля </h5>
+            <input type="file" name="file" class="btn btn-warning"> <br> <br>
+            <button type="submit" class="btn btn-success"> Обновить </button>
+            <p th:text="${error}"/>
+        </form>
+    </div>
+
+    <!-- Нижний колонтитул -->
+    <footer th:insert="blokcs/footer :: footer"></footer>
+</body>
+</html>
+
+
+
+
+
+

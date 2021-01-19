@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Мой блог</title>
+    <link rel="icon" href="/images/website/telegraff.png" type="images/png">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+</head>
+<body>
+    <!-- Верхний колонтитул (Шапка) -->
+    <header th:insert="blokcs/header :: header"></header>
+    <div class="container mt-5 mb-5">
+        <h1> Мои публикации </h1> <br>
+        <div th:each="el : ${posts}" class="alert alert-info mt-2">
+            <h3 th:text="${el.title}"></h3>
+            <a th:href="'/post/' + ${el.id}" class="btn btn-info" > Детальнее </a>
+            <a th:href="'/post/' + ${el.id} + '/edit'" class="btn btn-warning"> Изменить </a> <br> <br>
+            <form th:action="'/post/' + ${el.id} + '/remove'" method="post">
+                <button type="submit" class="btn btn-warning"> Удалить </button>
+            </form>
+        </div>
+    </div>
+    <!-- Нижний колонтитул -->
+    <footer th:insert="blokcs/footer :: footer"></footer>
+</body>
+</html>
